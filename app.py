@@ -19,7 +19,7 @@ try:
     busqueda = st.sidebar.text_input("🔍 Buscar por texto:")
 
     columna_1 = 'CDO'
-    columna_2 = 'PUERTO CDO'
+    columna_2 = 'DOMICILIO'
 
     df_filtrado = df.copy()
 
@@ -73,7 +73,7 @@ except Exception as e:
             tabla_dinamica = pd.pivot_table(
                 df_filtrado, 
                 index='CDO', 
-                columns='PUERTO CDO', 
+                columns='DOMICILIO', 
                 values=df.columns[0], # Usa la primera columna para contar
                 aggfunc='count',
                 fill_value=0 # Pone 0 si no hay datos en esa combinación
@@ -87,7 +87,7 @@ except Exception as e:
             )
             
         except Exception as pivot_error:
-            st.warning("Asegúrate de que las columnas 'CDO' y 'PUERTO CDO' existan para armar la tabla dinámica.")
+            st.warning("Asegúrate de que las columnas 'CDO' y 'DOMICILIO' existan para armar la tabla dinámica.")
 
         # --- DETALLE COMPLETO (Opcional) ---
         # Si además de la dinámica querés ver el detalle fila por fila abajo:
