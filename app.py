@@ -4,7 +4,7 @@ import pandas as pd
 # Configuración de la página (opcional, para que se vea ancha)
 st.set_page_config(page_title="Visualizador de Datos", layout="wide")
 
-st.title("📊 Mi Panel de Control de Excel")
+st.title("📊 Ocupacion CDO")
 st.write("Filtra la información del archivo de forma dinámica.")
 
 # 1. Cargar el archivo Excel de forma eficiente
