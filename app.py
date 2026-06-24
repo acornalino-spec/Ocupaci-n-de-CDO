@@ -18,8 +18,8 @@ try:
     st.sidebar.header("Filtros de Búsqueda")
     busqueda = st.sidebar.text_input("🔍 Buscar por texto:")
 
-    columna_1 = 'Zona'
-    columna_2 = 'Estado'
+    columna_1 = 'CDO'
+    columna_2 = 'PUERTO CDO'
 
     df_filtrado = df.copy()
 
@@ -72,8 +72,8 @@ except Exception as e:
         try:
             tabla_dinamica = pd.pivot_table(
                 df_filtrado, 
-                index='Zona', 
-                columns='Estado', 
+                index='CDO', 
+                columns='PUERTO CDO', 
                 values=df.columns[0], # Usa la primera columna para contar
                 aggfunc='count',
                 fill_value=0 # Pone 0 si no hay datos en esa combinación
@@ -87,7 +87,7 @@ except Exception as e:
             )
             
         except Exception as pivot_error:
-            st.warning("Asegúrate de que las columnas 'Zona' y 'Estado' existan para armar la tabla dinámica.")
+            st.warning("Asegúrate de que las columnas 'CDO' y 'PUERTO CDO' existan para armar la tabla dinámica.")
 
         # --- DETALLE COMPLETO (Opcional) ---
         # Si además de la dinámica querés ver el detalle fila por fila abajo:
