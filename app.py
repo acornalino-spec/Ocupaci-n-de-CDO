@@ -18,8 +18,8 @@ try:
     st.sidebar.header("Filtros de Búsqueda")
     busqueda = st.sidebar.text_input("🔍 Buscar por texto:")
 
-    columna_1 = 'CDO'
-    columna_2 = 'DOMICILIO'
+    columna_1 = 'Zona'
+    columna_2 = 'Estado'
 
     df_filtrado = df.copy()
 
@@ -56,4 +56,3 @@ except FileNotFoundError:
     st.error("⚠️ No se encontró el archivo 'datos.xlsx'.")
 except Exception as e:
     st.error(f"❌ Ocurrió un error: {e}")
-
